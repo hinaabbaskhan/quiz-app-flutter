@@ -103,8 +103,20 @@ class _QuizPageState extends State<QuizPage> {
                 if (quizBrain.getQuestionAnswer(quizBrain.questionNumber) ==
                     false) {
                   print('correct answer');
+                  scoreKeeper.add(
+                    const Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
                 } else {
                   print('incorrect answer');
+                  scoreKeeper.add(
+                    const Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ),
+                  );
                 }
                 // quizBrain.questionNumber++; //
                 quizBrain.nextQuestion();
@@ -126,6 +138,7 @@ class _QuizPageState extends State<QuizPage> {
           ),
         ),
         //TODO: Add a Row here as your score keeper
+        Row(children: scoreKeeper),
       ],
     );
   }
