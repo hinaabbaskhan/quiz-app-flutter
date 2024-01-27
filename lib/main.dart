@@ -96,10 +96,19 @@ class _QuizPageState extends State<QuizPage> {
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(15.0),
             child: InkWell(
               onTap: () {
                 //The user picked false.
+                if (quizBrain.getQuestionAnswer(quizBrain.questionNumber) ==
+                    false) {
+                  print('correct answer');
+                } else {
+                  print('incorrect answer');
+                }
+                // quizBrain.questionNumber++; //
+                quizBrain.nextQuestion();
+                setState(() {});
               },
               child: Container(
                 color: Colors.red,
