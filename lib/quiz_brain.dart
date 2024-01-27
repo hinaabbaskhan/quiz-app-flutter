@@ -1,6 +1,8 @@
 import 'package:quiz_app/question.dart';
 
 class QuizBrain {
+  int questionNumber = 0; //1//2//3
+
   List<Question> _questionBank = [
     Question(
       'You can lead a cow down stairs but not up stairs.',
