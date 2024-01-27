@@ -55,6 +55,29 @@ class _QuizPageState extends State<QuizPage> {
             child: InkWell(
               onTap: () {
                 //The user picked true.
+                //check correct answer
+                if (quizBrain.getQuestionAnswer(quizBrain.questionNumber) ==
+                    true) {
+                  print('correct answer');
+                  scoreKeeper.add(
+                    const Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
+                } else {
+                  print('wrong answer');
+                  scoreKeeper.add(
+                    const Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ),
+                  );
+                }
+                //Update Question and rebuild UI
+                quizBrain.nextQuestion();
+
+                setState(() {});
               },
               child: Container(
                 color: Colors.green,
