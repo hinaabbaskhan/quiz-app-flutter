@@ -1,10 +1,22 @@
 # quiz_app
 
-A new Flutter project.
+A new Flutter project for learning and practicing the fundamental building blocks of Object Oriented Programming (OOP) - Classes and Objects..
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Let's create a quiz app to test your general knowledge. This type of app is really liked by many people, and you can even make your own quiz for others to play and enjoy!
+
+![quizzler-demo](https://github.com/hinaabbaskhan/quiz_app_flutter/assets/47082795/d1987868-4da9-406a-907f-ac523dd6ad6e)
+
+## What we will Learn
+- Modularising your code into separate classes.
+- Dart classes and objects.
+- Using class constructors.
+- Extracting Widgets to refactor your code.
+- private and public modifiers in Dart.
+- How to use Dart lists.
+- The difference between var, const and final.
+
 
 A few resources to get you started if this is your first Flutter project:
 
