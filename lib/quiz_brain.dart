@@ -48,4 +48,11 @@ class QuizBrain {
     return _questionBank[questionNumber].questionAnswer!;
   }
 
+  void nextQuestion() {
+    if (questionNumber < _questionBank.length - 1) {
+      questionNumber++;
+    } else {
+      print('question completed');
+    }
+  }
 }
