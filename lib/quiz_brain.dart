@@ -1,9 +1,9 @@
 import 'package:quiz_app/question.dart';
 
 class QuizBrain {
-  int questionNumber = 0; //1//2//3
+  int _questionNumber = 0; //1//2
 
-  List<Question> _questionBank = [
+  final List<Question> _questionBank = [
     Question(
       'You can lead a cow down stairs but not up stairs.',
       false,
@@ -40,19 +40,21 @@ class QuizBrain {
         true),
   ];
 
-  String getQuestionText(int questionNumber) {
-    return _questionBank[questionNumber].questionText!;
+  String getQuestionText() {
+    return _questionBank[_questionNumber]
+        .questionText!; //_questionBank[2].questionText => 'A slug\'s blood is green.'
   }
 
-  bool getQuestionAnswer(int questionNumber) {
-    return _questionBank[questionNumber].questionAnswer!;
+  bool getQuestionAnswer() {
+    return _questionBank[_questionNumber]
+        .questionAnswer!; //_questionBank[2].questionAnswer =>true
   }
 
   void nextQuestion() {
-    if (questionNumber < _questionBank.length - 1) {
-      questionNumber++;
+    if (_questionNumber < _questionBank.length - 1) {
+      _questionNumber++; //0//1//2
     } else {
-      print('question completed');
+      print('questions completed');
     }
   }
 }
