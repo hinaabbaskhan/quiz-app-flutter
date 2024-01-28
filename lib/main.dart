@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'quiz_brain.dart';
+
 void main() => runApp(Quizzler());
 
 class Quizzler extends StatelessWidget {
@@ -27,6 +28,8 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   QuizBrain quizBrain = QuizBrain();
+  List<Icon> scoreKeeper = [];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,7 +42,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizBrain.getQuestionText(quizBrain.questionNumber!),
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 25.0,
@@ -56,8 +59,7 @@ class _QuizPageState extends State<QuizPage> {
               onTap: () {
                 //The user picked true.
                 //check correct answer
-                if (quizBrain.getQuestionAnswer(quizBrain.questionNumber) ==
-                    true) {
+                if (quizBrain.getQuestionAnswer() == true) {
                   print('correct answer');
                   scoreKeeper.add(
                     const Icon(
@@ -76,7 +78,6 @@ class _QuizPageState extends State<QuizPage> {
                 }
                 //Update Question and rebuild UI
                 quizBrain.nextQuestion();
-
                 setState(() {});
               },
               child: Container(
@@ -100,8 +101,8 @@ class _QuizPageState extends State<QuizPage> {
             child: InkWell(
               onTap: () {
                 //The user picked false.
-                if (quizBrain.getQuestionAnswer(quizBrain.questionNumber) ==
-                    false) {
+
+                if (quizBrain.getQuestionAnswer() == false) {
                   print('correct answer');
                   scoreKeeper.add(
                     const Icon(
@@ -118,7 +119,7 @@ class _QuizPageState extends State<QuizPage> {
                     ),
                   );
                 }
-                // quizBrain.questionNumber++; //
+
                 quizBrain.nextQuestion();
                 setState(() {});
               },
